@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2023 Stephan Lachnit <stephanlachnit@debian.org>
+# SPDX-License-Identifier: EUPL-1.2
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "g4dsdw"
+description = "Geant4 dataset downloader"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = [
+    "requests",
+]
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved",
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Development Status :: 3 - Alpha",
+]
+keywords = ["geant4"]
+
+[project.urls]
+"Documentation" = "https://stephanlachnit.github.io/g4dsdw/"
+"Source" = "https://github.com/stephanlachnit/g4dsdw"
+"Bug Tracker" = "https://github.com/stephanlachnit/g4dsdw/issues"
+
+[project.scripts]
+g4dsdw = "g4dsdw.__main__:run_main_and_exit"
+
+[project.optional-dependencies]
+docs = ["sphinx", "sphinx_rtd_theme", "myst-parser", "sphinxcontrib.apidoc"]
+test = ["pytest"]
